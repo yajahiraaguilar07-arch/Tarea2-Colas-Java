@@ -1,4 +1,4 @@
-import Estructuras_lineales.COLA.ColaCircular;
+import Estructuras_Lineales.COLA.ColaCircular;
 
 public class MainCircular {
     public static void main(String[] args) {
