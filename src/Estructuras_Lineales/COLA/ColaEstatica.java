@@ -3,7 +3,6 @@ package Estructuras_Lineales.COLA;
 public class ColaEstatica {
     private int[] datos;
     private int frente;
-    private int fin;
     private int tamano;
     private int capacidad;
 
@@ -17,7 +16,6 @@ public class ColaEstatica {
         this.capacidad = capacidad;
         datos = new int[capacidad];
         frente = 0;
-        fin = -1;
         tamano = 0;
     }
 
@@ -35,7 +33,8 @@ public class ColaEstatica {
             return;
         }
 
-        datos[++fin] = valor;
+        int fin = (frente + tamano) % capacidad;
+        datos[fin] = valor;
         tamano++;
     }
 
@@ -45,13 +44,19 @@ public class ColaEstatica {
             return -1;
         }
 
-        int valor = datos[frente++];
+        int valor = datos[frente];
+        frente = (frente + 1) % capacidad;
         tamano--;
         return valor;
     }
 
     public int peek() {
-        return estaVacia() ? -1 : datos[frente];
+        if (estaVacia()) {
+            System.out.println("La cola está vacía");
+            return -1;
+        }
+
+        return datos[frente];
     }
 
     public int contarElementos() {
@@ -65,8 +70,9 @@ public class ColaEstatica {
         }
 
         System.out.print("Frente -> ");
-        for (int i = frente; i <= fin; i++) {
-            System.out.print("[" + datos[i] + "] ");
+        for (int i = 0; i < tamano; i++) {
+            int indice = (frente + i) % capacidad;
+            System.out.print("[" + datos[indice] + "] ");
         }
         System.out.println("<- Fin");
     }
