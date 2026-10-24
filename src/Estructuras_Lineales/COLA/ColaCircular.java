@@ -1,4 +1,4 @@
-package Estructuras_lineales.COLA;
+package Estructuras_Lineales.COLA;
 
 public class ColaCircular {
     private int[] datos;
