@@ -1,4 +1,4 @@
-package Estructuras_lineales;
+package Estructuras_Lineales;
 
 public class Nodo {
     public int dato;
