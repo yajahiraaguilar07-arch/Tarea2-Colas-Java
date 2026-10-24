@@ -1,4 +1,4 @@
-import Estructuras_lineales.COLA.ColaDinamica;
+import Estructuras_Lineales.COLA.ColaDinamica;
 
 public class MainDinamica {
     public static void main(String[] args) {
