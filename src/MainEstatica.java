@@ -1,4 +1,4 @@
-import Estructuras_lineales.COLA.ColaEstatica;
+import Estructuras_Lineales.COLA.ColaEstatica;
 
 public class MainEstatica {
     public static void main(String[] args) {
